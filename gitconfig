@@ -1,0 +1,19 @@
+[user]
+        name = Eric Workman
+        email = ericsparkeworkman+github@gmail.com
+[core]
+        excludesfile = /home/scoob/.gitignore_global
+        autocrlf = input
+        whitespace = trailing-space,space-before-tab
+        editor = vim
+[color]
+        ui = true
+[alias]
+        co = checkout
+        cob = checkout -b
+        pretty = log --pretty=oneline
+        st = status
+        uns = reset HEAD --
+        last = log -l HEAD
+        lg = log --pretty=format:'%Cred%h%Creset %C(green)(%cd)%Creset %s...%C(blue)%an%Creset' --abbrev-commit --date=short
+        lgs = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
