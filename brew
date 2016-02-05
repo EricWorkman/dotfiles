@@ -1,0 +1,48 @@
+#!/bin/bash
+
+# Based off of https://github.com/franklinwise/dotfiles/blob/master/brew-it
+
+if [ "$(uname -s)" != "Darwin" ]; then
+  exit 0
+fi
+
+# required
+xcode-select --install
+
+
+if [ command -v brew >/dev/null 2>&1 ]; then
+	echo "Brew not installed. Installing Brew..."
+	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+        echo "Updating Homebrew packages..."
+	brew update
+	brew doctor
+
+	# so that brew install does not require root privledge
+	sudo chown -R $USER /usr/local/*
+fi
+
+# macvim
+brew install macvim --with-cscope --override-system-vim
+
+brew install wget
+brew install git
+brew install bash-completion
+
+# keyboard modifiers
+brew cask install karabiner
+brew cask install seil
+
+# vms
+brew cask install vagrant
+brew cask install virtualbox
+
+# python
+brew install pyenv
+pyenv install -s 3.5.1
+pyenv install -s 3.4.4
+pyenv install -s 2.7.11
+pyenv versions
+brew install pyenv-virtualenv
+echo "PyEnv-VirtualEnv usage: pyenv virtualenv 2.7.10 my-virtual-env-2.7.10"
+

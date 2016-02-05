@@ -3,6 +3,8 @@
     ~/.vim: vim/
     ~/.vimrc: vimrc
     ~/.gitconfig: gitconfig
+    ~/.bash_profile: bash_profile
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
+    - [chmod +x brew]
 
