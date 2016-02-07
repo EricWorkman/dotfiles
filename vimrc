@@ -22,6 +22,7 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'bitc/vim-bad-whitespace'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'lambdalisue/vim-pyenv'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'tpope/vim-fugitive'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -80,14 +81,17 @@ set encoding=utf-8
 
 " For jedi-vim
 "python with virtualenv support
-py << EOF
-import os
-import sys
-if 'VIRTUAL_ENV' in os.environ:
-  project_base_dir = os.environ['VIRTUAL_ENV']
-  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-  execfile(activate_this, dict(__file__=activate_this))
-EOF
+if jedi#init_python()
+  function! s:jedi_auto_force_py_version() abort
+    let major_version = pyenv#python#get_internal_major_version()
+    call jedi#force_py_version(major_version)
+  endfunction
+  augroup vim-pyenv-custom-augroup
+    autocmd! *
+    autocmd User vim-pyenv-activate-post   call s:jedi_auto_force_py_version()
+    autocmd User vim-pyenv-deactivate-post call s:jedi_auto_force_py_version()
+  augroup END
+endif
 
 " Theme
 set background=dark
