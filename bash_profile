@@ -6,7 +6,7 @@ eval $(ssh-agent)
 /usr/bin/ssh-add -K
 
 alias vim="mvim -v"
-alias vi="vim"
+alias vi="mvim -v"
 
 # PyEnv
 eval "$(pyenv init -)"
