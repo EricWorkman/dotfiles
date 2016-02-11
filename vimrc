@@ -60,18 +60,18 @@ au BufRead,BufNewFile *.js set tabstop=2
 au BufRead,BufNewFile *.js set softtabstop=2
 au BufRead,BufNewFile *.js set shiftwidth=2
 
-" Python settings
-au BufRead,BufNewFile *.py,*.pyw set expandtab
-au BufRead,BufNewFile *.py,*.pyw set textwidth=139
-au BufRead,BufNewFile *.py,*.pyw set tabstop=4
-au BufRead,BufNewFile *.py,*.pyw set smarttab
-au BufRead,BufNewFile *.py,*.pyw set softtabstop=4
-au BufRead,BufNewFile *.py,*.pyw set shiftwidth=4
-au BufRead,BufNewFile *.py,*.pyw set autoindent
-au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
-au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /\s\+$/
-au         BufNewFile *.py,*.pyw set fileformat=unix
-au BufRead,BufNewFile *.py,*.pyw let b:comment_leader = '#'
+" Python and cucumber feature settings
+au BufRead,BufNewFile *.py,*.pyw,*.feature set expandtab
+au BufRead,BufNewFile *.py,*.pyw,*.feature set textwidth=139
+au BufRead,BufNewFile *.py,*.pyw,*.feature set tabstop=4
+au BufRead,BufNewFile *.py,*.pyw,*.feature set smarttab
+au BufRead,BufNewFile *.py,*.pyw,*.feature set softtabstop=4
+au BufRead,BufNewFile *.py,*.pyw,*.feature set shiftwidth=4
+au BufRead,BufNewFile *.py,*.pyw,*.feature set autoindent
+au BufRead,BufNewFile *.py,*.pyw,*.feature match BadWhitespace /^\t\+/
+au BufRead,BufNewFile *.py,*.pyw,*.feature match BadWhitespace /\s\+$/
+au         BufNewFile *.py,*.pyw,*.feature set fileformat=unix
+au BufRead,BufNewFile *.py,*.pyw,*.feature let b:comment_leader = '#'
 
 let python_highlight_all=1
 syntax on
