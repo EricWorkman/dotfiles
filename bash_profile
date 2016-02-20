@@ -11,3 +11,6 @@ alias vi="mvim -v"
 # PyEnv
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+# Misc
+alias weather="curl -4 wttr.in/Lyndhurst"
