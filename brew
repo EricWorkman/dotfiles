@@ -28,6 +28,7 @@ brew install macvim --with-cscope --override-system-vim
 brew install wget
 brew install git
 brew install bash-completion
+brew install htop
 
 # keyboard modifiers
 brew cask install karabiner
@@ -46,3 +47,16 @@ pyenv versions
 brew install pyenv-virtualenv
 echo "PyEnv-VirtualEnv usage: pyenv virtualenv 2.7.10 my-virtual-env-2.7.10"
 
+# Erlang and Elixir
+brew install elixir
+
+echo "Navigate to https://www.erlang-solutions.com/resources/download.html and download Erlang"
+
+# Ruby
+brew install ruby
+brew install rbenv
+rbenv init
+rbenv install 2.0.0-p648
+
+# Exercism.io
+brew install exercism

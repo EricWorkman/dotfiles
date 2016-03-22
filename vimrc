@@ -26,6 +26,8 @@ Plugin 'lambdalisue/vim-pyenv'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'tpope/vim-fugitive'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'elixir-lang/vim-elixir'
+Plugin 'vim-ruby/vim-ruby'
 
 " all plugins are defined
 call vundle#end()            " required
@@ -60,24 +62,30 @@ au BufRead,BufNewFile *.js set tabstop=2
 au BufRead,BufNewFile *.js set softtabstop=2
 au BufRead,BufNewFile *.js set shiftwidth=2
 
-" Python and cucumber feature settings
-au BufRead,BufNewFile *.py,*.pyw,*.feature set expandtab
-au BufRead,BufNewFile *.py,*.pyw,*.feature set textwidth=139
-au BufRead,BufNewFile *.py,*.pyw,*.feature set tabstop=4
-au BufRead,BufNewFile *.py,*.pyw,*.feature set smarttab
-au BufRead,BufNewFile *.py,*.pyw,*.feature set softtabstop=4
-au BufRead,BufNewFile *.py,*.pyw,*.feature set shiftwidth=4
-au BufRead,BufNewFile *.py,*.pyw,*.feature set autoindent
-au BufRead,BufNewFile *.py,*.pyw,*.feature match BadWhitespace /^\t\+/
-au BufRead,BufNewFile *.py,*.pyw,*.feature match BadWhitespace /\s\+$/
-au         BufNewFile *.py,*.pyw,*.feature set fileformat=unix
-au BufRead,BufNewFile *.py,*.pyw,*.feature let b:comment_leader = '#'
+" Python, cucumber feature, ruby, and elixir settings
+au BufRead,BufNewFile *.py,*.pyw,*.feature,*.rb,*.exs set expandtab
+au BufRead,BufNewFile *.py,*.pyw,*.feature,*.rb,*.exs set textwidth=139
+au BufRead,BufNewFile *.py,*.pyw,*.feature,*.rb	      set tabstop=4
+au BufRead,BufNewFile *.py,*.pyw,*.feature,*.rb,*.exs set smarttab
+au BufRead,BufNewFile *.py,*.pyw,*.feature,*.rb       set softtabstop=4
+au BufRead,BufNewFile *.py,*.pyw,*.feature,*.rb       set shiftwidth=4
+au BufRead,BufNewFile *.py,*.pyw,*.feature,*.rb,*.exs set autoindent
+au BufRead,BufNewFile *.py,*.pyw,*.feature,*.rb,*.exs match BadWhitespace /^\t\+/
+au BufRead,BufNewFile *.py,*.pyw,*.feature,*.rb,*.exs match BadWhitespace /\s\+$/
+au         BufNewFile *.py,*.pyw,*.feature,*.rb,*.exs set fileformat=unix
+au BufRead,BufNewFile *.py,*.pyw,*.feature,*.rb,*.exs let b:comment_leader = '#'
+
+au BufRead,BufNewFile *.exs set tabstop=2
+au BufRead,BufNewFile *.exs set softtabstop=2
+au BufRead,BufNewFile *.exs set shiftwidth=2
 
 let python_highlight_all=1
 syntax on
 
 " just to be safe
 set encoding=utf-8
+
+set nu
 
 " For jedi-vim
 "python with virtualenv support

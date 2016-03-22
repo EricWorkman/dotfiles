@@ -12,5 +12,9 @@ alias vi="mvim -v"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+# Ruby
+eval "$(rbenv init -)"
+
 # Misc
 alias weather="curl -4 wttr.in/Lyndhurst"
+
