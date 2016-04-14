@@ -29,6 +29,7 @@ brew install wget
 brew install git
 brew install bash-completion
 brew install htop
+brew install ctags
 
 # keyboard modifiers
 brew cask install karabiner
