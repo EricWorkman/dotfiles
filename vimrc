@@ -32,6 +32,7 @@ Plugin 'tpope/vim-eunuch'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-easytags'
 Plugin 'ervandew/supertab'
+Plugin 'slashmili/alchemist.vim'
 
 " all plugins are defined
 call vundle#end()            " required
@@ -65,25 +66,25 @@ set foldlevel=99
 nnoremap <space> za
 
 " Python completion
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType ruby   set omnifunc=syntaxcomplete#Complete
+autocmd FileType python                                          set omnifunc=pythoncomplete#Complete
+autocmd FileType ruby                                            set omnifunc=syntaxcomplete#Complete
 
 " Python, cucumber feature, ruby, and elixir settings
-au BufRead,BufNewFile *.py,*.pyw,*.feature,*.rb,*.exs set expandtab
-au BufRead,BufNewFile *.py,*.pyw,*.feature,*.exs set textwidth=119
-au BufRead,BufNewFile *.py,*.pyw,*.feature            set tabstop=4
-au BufRead,BufNewFile *.py,*.pyw,*.feature,*.rb,*.exs set smarttab
-au BufRead,BufNewFile *.py,*.pyw,*.feature            set softtabstop=4
-au BufRead,BufNewFile *.py,*.pyw,*.feature            set shiftwidth=4
-au BufRead,BufNewFile *.py,*.pyw,*.feature,*.rb,*.exs set autoindent
-au BufRead,BufNewFile *.py,*.pyw,*.feature,*.rb,*.exs match BadWhitespace /^\t\+/
-au BufRead,BufNewFile *.py,*.pyw,*.feature,*.rb,*.exs match BadWhitespace /\s\+$/
-au         BufNewFile *.py,*.pyw,*.feature,*.rb,*.exs set fileformat=unix
-au BufRead,BufNewFile *.py,*.pyw,*.feature,*.rb,*.exs let b:comment_leader = '#'
+au BufRead,BufNewFile *.py,*.pyw,*.feature,*.rb,*.exs,*.ex,*.eex set expandtab
+au BufRead,BufNewFile *.py,*.pyw,*.feature,*.exs,*.ex,*.eex      set textwidth=119
+au BufRead,BufNewFile *.py,*.pyw,*.feature                       set tabstop=4
+au BufRead,BufNewFile *.py,*.pyw,*.feature,*.rb,*.exs,*.ex,*.eex set smarttab
+au BufRead,BufNewFile *.py,*.pyw,*.feature                       set softtabstop=4
+au BufRead,BufNewFile *.py,*.pyw,*.feature                       set shiftwidth=4
+au BufRead,BufNewFile *.py,*.pyw,*.feature,*.rb,*.exs,*.ex,*.eex set autoindent
+au BufRead,BufNewFile *.py,*.pyw,*.feature,*.rb                  match BadWhitespace /^\t\+/
+au BufRead,BufNewFile *.py,*.pyw,*.feature,*.rb                  match BadWhitespace /\s\+$/
+au         BufNewFile *.py,*.pyw,*.feature,*.rb,*.exs,*.ex,*.eex set fileformat=unix
+au BufRead,BufNewFile *.py,*.pyw,*.feature,*.rb,*.exs,*.ex,*.eex let b:comment_leader = '#'
 
-au BufRead,BufNewFile *.js,*.rb,*.exs set tabstop=2
-au BufRead,BufNewFile *.js,*.rb,*.exs set softtabstop=2
-au BufRead,BufNewFile *.js,*.rb,*.exs set shiftwidth=2
+au BufRead,BufNewFile *.js,*.rb,*.exs,*.ex,*.eex                 set tabstop=2
+au BufRead,BufNewFile *.js,*.rb,*.exs,*.ex,*.eex                 set softtabstop=2
+au BufRead,BufNewFile *.js,*.rb,*.exs,*.ex,*.eex                 set shiftwidth=2
 
 au BufRead,BufNewFile *.rb match Error /\%81v.\+/
 
