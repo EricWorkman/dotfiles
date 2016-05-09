@@ -87,9 +87,9 @@ au BufRead,BufNewFile *.js,*.rb,*.exs,*.ex,*.eex                 set tabstop=2
 au BufRead,BufNewFile *.js,*.rb,*.exs,*.ex,*.eex                 set softtabstop=2
 au BufRead,BufNewFile *.js,*.rb,*.exs,*.ex,*.eex                 set shiftwidth=2
 
-au BufRead,BufNewFile *.rb match Error /\%81v.\+/
+au BufRead,BufNewFile *.rb                                      match Error /\%81v.\+/
+au BufRead,BufNewFile *.py                                      let python_highlight_all=1
 
-let python_highlight_all=1
 syntax on
 
 " Just to be safe
