@@ -33,6 +33,7 @@ Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-easytags'
 Plugin 'ervandew/supertab'
 Plugin 'slashmili/alchemist.vim'
+Plugin 'tpope/vim-endwise'
 
 " all plugins are defined
 call vundle#end()            " required
