@@ -5,6 +5,8 @@
     ~/.gitconfig: gitconfig
     ~/.bash_profile: bash_profile
     ~/.iex.exs: iex_exs
+    ~/.ctags: ctags
+    ~/.zshrc: zshrc
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
     - [chmod +x brew]

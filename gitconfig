@@ -1,21 +1,29 @@
 [user]
-        name = Eric Workman
-        email = ericsparkeworkman+github@gmail.com
+    name = Eric Workman
+    useConfigOnly = true
 [core]
-        excludesfile = /home/scoob/.gitignore_global
-        autocrlf = input
-        whitespace = trailing-space,space-before-tab
-        editor = vim
+    excludesfile = ~/.gitignore_global
+    autocrlf = input
+    whitespace = trailing-space,space-before-tab
+    editor = vim
 [color]
-        ui = true
+    ui = true
 [alias]
-        co = checkout
-        cob = checkout -b
-        pretty = log --pretty=oneline
-        st = status
-        uns = reset HEAD --
-        last = log -l HEAD
-        lg = log --pretty=format:'%Cred%h%Creset %C(green)(%cd)%Creset %s...%C(blue)%an%Creset' --abbrev-commit --date=short
-        lgs = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+    co = checkout
+    cob = checkout -b
+    pretty = log --pretty=oneline
+    st = status
+    uns = reset HEAD --
+    last = log -l HEAD
+    lg = log --pretty=format:'%Cred%h%Creset %C(green)(%cd)%Creset %s...%C(blue)%an%Creset' --abbrev-commit --date=short
+    lgs = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+    rh = reset --hard
+    rs = reset --soft
 [push]
-	default = simple
+    default = simple
+[color "status"]
+    added = green
+    changed = yellow bold
+    untracked = red bold
+[stash]
+    showPatch = true

@@ -48,11 +48,6 @@ pyenv versions
 brew install pyenv-virtualenv
 echo "PyEnv-VirtualEnv usage: pyenv virtualenv 2.7.10 my-virtual-env-2.7.10"
 
-# Erlang and Elixir
-brew install elixir
-
-echo "Navigate to https://www.erlang-solutions.com/resources/download.html and download Erlang"
-
 # Ruby
 brew install ruby
 brew install rbenv
@@ -61,3 +56,22 @@ rbenv install 2.0.0-p648
 
 # Exercism.io
 brew install exercism
+
+# ZSH
+brew install zsh
+
+# Erlang and Elixir
+brew install elixir
+brew uninstall erlang
+brew install homebrew/versions/erlang-r18
+# ASDF to handle elixir versioning
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.3.0
+. ~/.asdf/asdf.sh
+asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
+asdf install erlang 18.3
+asdf global erlang 18.3
+asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
+asdf install elixir 1.3.4
+asdf global elixir 1.3.4
+mix local.hex
+mix local.rebar

@@ -27,4 +27,10 @@ alias postgres_stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
 
 # Misc
 alias weather="curl wttr.in/Lyndhurst"
+alias cleardns="sudo killall -HUP mDNSResponder"
+alias stayawake="sudo caffeinate -dims"
+
+function title {
+  printf "\033]0;%s\007" "$1"
+}
 
