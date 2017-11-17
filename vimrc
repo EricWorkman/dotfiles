@@ -21,8 +21,7 @@ Plugin 'slashmili/alchemist.vim'
 " Folding
 Plugin 'tmhedberg/SimpylFold'
 " Nav
-Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plugin 'junegunn/fzf.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 " Python
 Plugin 'nvie/vim-flake8'
@@ -38,6 +37,7 @@ Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-endwise'
 Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'godlygeek/tabular'
+Plugin 'csexton/trailertrash.vim'
 " Syntax
 Plugin 'scrooloose/syntastic'
 Plugin 'bitc/vim-bad-whitespace'
@@ -74,6 +74,14 @@ noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+if executable('ag')
+  set grepprg=ag\ --nogroup\ --nocolor
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_use_caching = 0
+endif
 
 " Backspace like a normal person
 set backspace=indent,eol,start
@@ -213,3 +221,8 @@ nmap <leader>a{ :Tabularize /{<CR>
 vmap <leader>a{ :Tabularize /{<CR>
 nmap <silent><Bar> <Bar><Esc>:Tabularize /<Bar><CR>a
 vmap <silent><Bar> <Bar><Esc>:Tabularize /<Bar><CR>a
+
+" Trim whitespace on save, highight whitespace
+autocmd BufWritePre * :TrailerTrim
+hi UnwantedTrailerTrash guibg=red ctermbg=red
+hi Search cterm=NONE ctermfg=white ctermbg=red
